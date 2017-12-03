@@ -1,17 +1,10 @@
 {
+  "extends": "./tsconfig-esm2015.json",
   "compilerOptions": {
-    "declaration": true,
-    "module": "es2015",
     "target": "es5",
-    "baseUrl": "./tmp",
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
     "outDir": "./tmp/esm5",
-    "rootDir": "./tmp",
-    "skipLibCheck": true,
-    "lib": ["dom", "es2015"]
+    "rootDir": "./tmp"
   },
-  "files": ["./tmp/public_api.ts"],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
