@@ -16,6 +16,7 @@ So what's in this repo?
 
 * **[setup with ng-packagr (master)](https://github.com/juristr/ngx-tabs-libdemo) -** the `master` branch shows the _suggested approach_, namely to setup your library with [ng-packagr](https://github.com/dherges/ng-packagr).
 * **[manual setup (manual-setup)](https://github.com/juristr/ngx-tabs-libdemo/tree/manual-setup) -** the `manual-setup` branch on the other hand, demonstrates how to assemble the different tooling in order to get a manual setup with simple npm scripts that are being executed one after the other. This allows for full flexibility and serves for educational purposes, to learn how things are done behind the scenes. _This is a slightly improved version of the talk given at NG-BE (see link below)._
+* **[library with demo project and tests (with-demoproj-setup)](https://github.com/juristr/ngx-tabs-libdemo/tree/with-demoproj-setup) -** the `with-demo-proj` branch shows how to use [Nrwl/nx](https://nrwl.io/nx) to have a fully functional Angular CLI project that can be used for developing the library. Furthermore it integrates with `ng-packagr` to create a build version of the package which can be consumed by the demo project as well.
 
 ## Talks
 

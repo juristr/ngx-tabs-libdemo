@@ -1,0 +1,92 @@
+{
+  "$schema": "./node_modules/@nrwl/schematics/src/schema.json",
+  "project": {
+    "name": "nxlibworkflow",
+    "npmScope": "juristr",
+    "latestMigration": "20180130-angular-devkit-schematics"
+  },
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "./tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/tabsdemo/src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/tabsdemo/e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "schematics": {
+      "collection": "@nrwl/schematics",
+      "postGenerate": "npm run format",
+      "newProject": ["app", "lib"]
+    },
+    "styleExt": "css",
+    "component": {}
+  },
+  "warnings": {
+    "typescriptMismatch": false
+  },
+  "apps": [
+    {
+      "name": "tabsdemo",
+      "root": "apps/tabsdemo/src",
+      "outDir": "dist/apps/tabsdemo",
+      "assets": ["assets", "favicon.ico"],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": ["styles.css"],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "tabsdemo-packaged",
+      "root": "apps/tabsdemo/src",
+      "outDir": "dist/apps/tabsdemo-packaged",
+      "assets": ["assets", "favicon.ico"],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.packaged.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": ["styles.css"],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "ngx-tabs-lib",
+      "root": "libs/ngx-tabs-lib/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    }
+  ]
+}

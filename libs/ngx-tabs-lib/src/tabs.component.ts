@@ -1,9 +1,4 @@
-import {
-  Component,
-  ContentChildren,
-  QueryList,
-  AfterContentInit
-} from '@angular/core';
+import { Component, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 import { TabComponent } from './tab.component';
 
 @Component({
