@@ -14,8 +14,8 @@ This repo is meant to demonstrate the creation of an Angular library, following 
 
 So what's in this repo?
 
-* **[setup with ng-packagr (master)](https://github.com/juristr/ngx-tabs-libdemo) -** the `master` branch shows the suggested approach, namely to setup your library with [ng-packagr](https://github.com/dherges/ng-packagr).
-* **[manual setup (manual-setup)](https://github.com/juristr/ngx-tabs-libdemo/tree/manual-setup) -** the `manual-setup` branch on the other hand, demonstrates how to assemble the different tooling in order to get a manual setup with simple npm scripts that are being executed one after the other. This allows for full flexibility and serves for educational purposes, to learn how things are done behind the scenes.
+* **[setup with ng-packagr (master)](https://github.com/juristr/ngx-tabs-libdemo) -** the `master` branch shows the _suggested approach_, namely to setup your library with [ng-packagr](https://github.com/dherges/ng-packagr).
+* **[manual setup (manual-setup)](https://github.com/juristr/ngx-tabs-libdemo/tree/manual-setup) -** the `manual-setup` branch on the other hand, demonstrates how to assemble the different tooling in order to get a manual setup with simple npm scripts that are being executed one after the other. This allows for full flexibility and serves for educational purposes, to learn how things are done behind the scenes. _This is a slightly improved version of the talk given at NG-BE (see link below)._
 
 ## Talks
 
