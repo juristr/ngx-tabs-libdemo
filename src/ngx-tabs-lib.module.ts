@@ -8,4 +8,4 @@ import { TabComponent } from './tab.component';
   declarations: [TabsComponent, TabComponent],
   exports: [TabsComponent, TabComponent]
 })
-export class TabsModule {}
+export class NgxTabsLibModule {}
