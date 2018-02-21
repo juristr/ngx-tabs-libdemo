@@ -21,11 +21,16 @@ http_archive(
 
 ####################################
 # Fetch and install the NodeJS rules
+
+# Using a pre-release snapshot to pick up a commit that makes all nodejs_binary
+# programs produce source-mapped stack traces and uglify sourcemaps.
+RULES_NODEJS_VERSION = "0162fdbe8ed986c9b5d5b79e53c98385ddaf6edd"
+
 http_archive(
     name = "build_bazel_rules_nodejs",
-    url = "https://github.com/bazelbuild/rules_nodejs/archive/0.4.1.zip",
-    strip_prefix = "rules_nodejs-0.4.1",
-    sha256 = "e9bc013417272b17f302dc169ad597f05561bb277451f010043f4da493417607",
+    url = "https://github.com/bazelbuild/rules_nodejs/archive/%s.zip" % RULES_NODEJS_VERSION,
+    strip_prefix = "rules_nodejs-%s" % RULES_NODEJS_VERSION,
+    sha256 = "922327733a9ffe5961cd6edbce597d07845ea69cc753066d554137f663dedbe5",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories", "yarn_install")

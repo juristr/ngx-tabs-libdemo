@@ -23,3 +23,18 @@ filegroup(
     # reference our installed node_modules directory.
     visibility = ["//visibility:public"],
 )
+
+load("@angular//:index.bzl", "ng_module", "ng_package")
+
+ng_module(
+    name = "root_module",
+    srcs = glob(["*.ts"]),
+    deps = ["//src"],
+)
+
+ng_package(
+    # Note: currently this is also the name of the resulting bundles
+    name = "ngx-tabs-libdemo",
+    deps = [":root_module"],
+    entry_point = "index.js",
+)

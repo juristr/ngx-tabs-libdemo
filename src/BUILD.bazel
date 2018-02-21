@@ -1,3 +1,5 @@
+package(default_visibility=["//:__subpackages__"])
+
 load("@angular//:index.bzl", "ng_module")
 
 # This build rule invokes the Angular compiler `ngc` on a
