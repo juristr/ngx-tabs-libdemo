@@ -8,13 +8,19 @@
   "typings": "./ngx-tabs-libdemo.d.ts",
   "scripts": {
     "build": "bazel build //...",
+    "test": "bazel test //...",
     "copyPackageJson": "copyfiles package.json dist",
-    "semantic-release": "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post",
+    "semantic-release":
+      "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post",
     "postinstall": "ngc -p angular.tsconfig.json",
-    "prebazel-lint": "bazel build --noshow_progress @io_bazel//src/tools/skylark/java/com/google/devtools/skylark/skylint:Skylint",
-    "bazel-lint": "find . -type f \\( -name BUILD -or -name BUILD.bazel -or -name *.bzl \\) ! -path \"*/node_modules/*\" ! -path \"./dist/*\" | xargs $(bazel info bazel-bin)/external/io_bazel/src/tools/skylark/java/com/google/devtools/skylark/skylint/Skylint",
-    "prebazel-format": "bazel build --noshow_progress @com_github_bazelbuild_buildtools//buildifier",
-    "bazel-format": "find . -type f \\( -name BUILD -or -name BUILD.bazel \\) ! -path \"*/node_modules/*\" | xargs $(bazel info bazel-bin)/external/com_github_bazelbuild_buildtools/buildifier/*/buildifier"
+    "prebazel-lint":
+      "bazel build --noshow_progress @io_bazel//src/tools/skylark/java/com/google/devtools/skylark/skylint:Skylint",
+    "bazel-lint":
+      "find . -type f \\( -name BUILD -or -name BUILD.bazel -or -name *.bzl \\) ! -path \"*/node_modules/*\" ! -path \"./dist/*\" | xargs $(bazel info bazel-bin)/external/io_bazel/src/tools/skylark/java/com/google/devtools/skylark/skylint/Skylint",
+    "prebazel-format":
+      "bazel build --noshow_progress @com_github_bazelbuild_buildtools//buildifier",
+    "bazel-format":
+      "find . -type f \\( -name BUILD -or -name BUILD.bazel \\) ! -path \"*/node_modules/*\" | xargs $(bazel info bazel-bin)/external/com_github_bazelbuild_buildtools/buildifier/*/buildifier"
   },
   "author": "Juri Strumpflohner",
   "license": "MIT",

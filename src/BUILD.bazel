@@ -19,6 +19,7 @@ ng_module(
         "*.html",
     ]),
     tsconfig = "//:tsconfig.json",
+    deps = ["@rxjs"],
 )
 
 ts_library(
