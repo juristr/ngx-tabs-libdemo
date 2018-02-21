@@ -7,15 +7,13 @@ general:
 
 jobs:
   build:
+    docker:
+      - image: circleci/node:4.8.2
     steps:
-      - echo "no-op build"
-  lint:
-    steps:
-      - echo "no-op lint"
+      - run: echo "no-op build"
 
 workflows:
   version: 2
   default_workflow:
     jobs:
       - build
-      - lint
