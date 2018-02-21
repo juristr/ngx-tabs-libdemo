@@ -5,9 +5,17 @@ general:
     only:
       - bazel
 
-# Empty config on the master branch.
-# The bazel branch has an actual set of jobs to run
+jobs:
+  build:
+    steps:
+      - echo "no-op build"
+  lint:
+    steps:
+      - echo "no-op lint"
+
 workflows:
   version: 2
   default_workflow:
     jobs:
+      - build
+      - lint
