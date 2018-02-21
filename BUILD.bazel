@@ -29,7 +29,7 @@ ANGULAR_TESTING = [
     # We use AOT, so the compiler and the dynamic platform-browser should be
     # visible only in tests
     "node_modules/@angular/compiler/bundles/*.umd.js",
-    "node_modules/@angular/platform-browser-dynamic/bundles/*.umd.js"
+    "node_modules/@angular/platform-browser-dynamic/bundles/*.umd.js",
 ]
 
 filegroup(

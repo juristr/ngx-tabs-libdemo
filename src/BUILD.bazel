@@ -12,7 +12,7 @@ ng_module(
     name = "src",
     srcs = glob(
         ["*.ts"],
-        exclude = ["*.spec.ts"]
+        exclude = ["*.spec.ts"],
     ),
     assets = glob([
         "*.css",
