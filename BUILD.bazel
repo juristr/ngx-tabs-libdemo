@@ -1,0 +1,25 @@
+"""Root configuration for Bazel build tool.
+"""
+
+# Allow the tsconfig.json file to be referenced by subpackages
+exports_files(["tsconfig.json"])
+
+# Provides the npm-installed dependencies to Bazel actions.
+filegroup(
+    name = "node_modules",
+    srcs = glob(
+        ["node_modules/**/*"],
+        # Exclude directories that commonly contain filenames which are
+        # illegal bazel labels
+        exclude = [
+            # e.g. node_modules/adm-zip/test/assets/attributes_test/New folder/hidden.txt
+            "node_modules/**/test/**",
+            # e.g. node_modules/xpath/docs/function resolvers.md
+            "node_modules/**/docs/**",
+        ],
+    ),
+    # Allow this targets to be referenced by anyone.
+    # Other repositories running nodejs binaries will need to
+    # reference our installed node_modules directory.
+    visibility = ["//visibility:public"],
+)

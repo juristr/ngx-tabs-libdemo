@@ -1,0 +1,18 @@
+load("@angular//:index.bzl", "ng_module")
+
+# This build rule invokes the Angular compiler `ngc` on a
+# single compilation unit. In this example, there is only
+# one compilation unit in the repository, but if the library
+# were larger, we would split up some subdirectories into
+# separate Bazel "packages" with their own @NgModule class
+# and ng_module build rule, so that we get benefits of
+# incremental compilation only of the affected package.
+ng_module(
+    name = "src",
+    srcs = glob(["*.ts"]),
+    assets = glob([
+        "*.css",
+        "*.html",
+    ]),
+    tsconfig = "//:tsconfig.json",
+)

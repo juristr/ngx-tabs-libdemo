@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-tabs-libdemo",
   "version": "0.0.0-development",
   "description": "Demo library to showcase Angular packaging format",
@@ -8,9 +7,14 @@
   "es2015": "./esm2015/ngx-tabs-libdemo.js",
   "typings": "./ngx-tabs-libdemo.d.ts",
   "scripts": {
-    "build": "ng-packagr -p package.json",
+    "build": "bazel build //...",
     "copyPackageJson": "copyfiles package.json dist",
-    "semantic-release": "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post"
+    "semantic-release": "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post",
+    "postinstall": "ngc -p angular.tsconfig.json",
+    "prebazel-lint": "bazel build --noshow_progress @io_bazel//src/tools/skylark/java/com/google/devtools/skylark/skylint:Skylint",
+    "bazel-lint": "find . -type f \\( -name BUILD -or -name BUILD.bazel -or -name *.bzl \\) ! -path \"*/node_modules/*\" ! -path \"./dist/*\" | xargs $(bazel info bazel-bin)/external/io_bazel/src/tools/skylark/java/com/google/devtools/skylark/skylint/Skylint",
+    "prebazel-format": "bazel build --noshow_progress @com_github_bazelbuild_buildtools//buildifier",
+    "bazel-format": "find . -type f \\( -name BUILD -or -name BUILD.bazel \\) ! -path \"*/node_modules/*\" | xargs $(bazel info bazel-bin)/external/com_github_bazelbuild_buildtools/buildifier/*/buildifier"
   },
   "author": "Juri Strumpflohner",
   "license": "MIT",
@@ -20,21 +24,22 @@
     }
   },
   "peerDependencies": {
-    "@angular/core": "^5.0.0",
-    "@angular/common": "^5.0.0",
+    "@angular/core": "^6.0.0-beta.4",
+    "@angular/common": "^6.0.0-beta.4",
     "rxjs": "^5.5.2"
   },
   "devDependencies": {
-    "@angular/common": "^5.0.2",
-    "@angular/compiler": "^5.0.2",
-    "@angular/compiler-cli": "^5.0.2",
-    "@angular/core": "^5.0.2",
+    "@angular/bazel": "^6.0.0-beta.4",
+    "@angular/common": "^6.0.0-beta.4",
+    "@angular/compiler": "^6.0.0-beta.4",
+    "@angular/compiler-cli": "^6.0.0-beta.4",
+    "@angular/core": "^6.0.0-beta.4",
+    "@types/node": "^9.4.6",
     "copyfiles": "^1.2.0",
-    "ng-packagr": "^2.0.0",
     "rollup": "^0.51.8",
     "rxjs": "^5.5.2",
     "semantic-release": "^8.2.0",
-    "tsickle": "^0.26.0",
+    "tsickle": "^0.27.2",
     "typescript": "2.4.2",
     "zone.js": "^0.8.14"
   },
