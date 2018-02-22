@@ -54,10 +54,11 @@ filegroup(
     name = "angular_bootstrap_scripts",
     # do not sort
     srcs = [
-        "//:node_modules/zone.js/dist/zone.min.js",
+        "//:node_modules/zone.js/dist/zone.js",
         "//:node_modules/zone.js/dist/async-test.js",
         "//:node_modules/zone.js/dist/sync-test.js",
-        "//:node_modules/zone.js/dist/proxy.min.js",
+        "//:node_modules/zone.js/dist/fake-async-test.js",
+        "//:node_modules/zone.js/dist/proxy.js",
         "//:node_modules/zone.js/dist/jasmine-patch.js",
     ],
     visibility = ["//visibility:public"],

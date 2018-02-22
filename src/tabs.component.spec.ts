@@ -1,8 +1,21 @@
 import { Component, ViewChild } from '@angular/core';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
 import { By } from '@angular/platform-browser';
 import { TabsComponent } from './tabs.component';
 import { TabComponent } from './tab.component';
+
+try {
+  TestBed.initTestEnvironment(
+    BrowserDynamicTestingModule,
+    platformBrowserDynamicTesting()
+  );
+} catch (e) {
+  // Ignore exceptions when calling it multiple times.
+}
 
 describe('TabsComponent', () => {
   let fixture: ComponentFixture<TestCmp>;
