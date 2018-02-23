@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
+  BrowserTestingModule,
+  platformBrowserTesting
+} from '@angular/platform-browser/testing';
 import { By } from '@angular/platform-browser';
 
 import { TabsComponent } from './tabs.component';
@@ -11,10 +11,7 @@ import { TabComponent } from './tab.component';
 import { NgxTabsLibModuleNgSummary } from './ngx-tabs-lib.module.ngsummary';
 
 try {
-  TestBed.initTestEnvironment(
-    BrowserDynamicTestingModule,
-    platformBrowserDynamicTesting()
-  );
+  TestBed.initTestEnvironment(BrowserTestingModule, platformBrowserTesting());
 } catch (e) {
   // Ignore exceptions when calling it multiple times.
 }
