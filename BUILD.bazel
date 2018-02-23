@@ -35,6 +35,7 @@ ng_module(
 ng_package(
     # Note: currently this is also the name of the resulting bundles
     name = "ngx-tabs-libdemo",
-    deps = [":root_module"],
+    srcs = [":package.json"],
     entry_point = "index.js",
+    deps = [":root_module"],
 )
