@@ -5,8 +5,10 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 import { By } from '@angular/platform-browser';
+
 import { TabsComponent } from './tabs.component';
 import { TabComponent } from './tab.component';
+import { NgxTabsLibModuleNgSummary } from './ngx-tabs-lib.module.ngsummary';
 
 try {
   TestBed.initTestEnvironment(
@@ -24,7 +26,8 @@ describe('TabsComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [TestCmp, TabsComponent, TabComponent]
+        declarations: [TestCmp, TabsComponent, TabComponent],
+        aotSummaries: NgxTabsLibModuleNgSummary
       }).compileComponents();
     })
   );
