@@ -37,5 +37,10 @@ ng_package(
     name = "ngx-tabs-libdemo",
     srcs = [":package.json"],
     entry_point = "index.js",
-    deps = [":root_module"],
+    deps = [
+        ":root_module",
+        # TODO(alexeagle): we should get the transitive files without listing these
+        # Workaround for https://github.com/angular/angular/issues/22419
+        "//src",
+    ],
 )

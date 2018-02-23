@@ -17,4 +17,8 @@ ng_module(
         "*.html",
     ]),
     tsconfig = "//:tsconfig.json",
+    # Normally the index bundle generator in ngc assumes there is an index.ts
+    # in each package. We override it with the top-level exported API of this
+    # package.
+    entry_point = "ngx-tabs-lib.module.ts",
 )

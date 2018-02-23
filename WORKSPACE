@@ -42,6 +42,7 @@ node_repositories(package_json = ["//:package.json"])
 # Fetch and install the TypeScript rules
 # Using a pre-release snapshot to pick up the NodeJS options change for ng_module
 RULES_TS_VERSION = "fc6519088249ee0fca9e56a4a98ed10fb58cab63"
+
 http_archive(
     name = "build_bazel_rules_typescript",
     url = "https://github.com/bazelbuild/rules_typescript/archive/%s.zip" % RULES_TS_VERSION,
