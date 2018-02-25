@@ -8,6 +8,7 @@
   "typings": "./ngx-tabs-libdemo.d.ts",
   "scripts": {
     "build": "bazel build //...",
+    "build:lib": "bazel build :ngx-tabs-libdemo",
     "copyPackageJson": "copyfiles package.json dist",
     "semantic-release": "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post",
     "postinstall": "ngc -p angular.tsconfig.json",
