@@ -22,15 +22,11 @@ http_archive(
 ####################################
 # Fetch and install the NodeJS rules
 
-# Using a pre-release snapshot to pick up a commit that makes all nodejs_binary
-# programs produce source-mapped stack traces and uglify sourcemaps.
-RULES_NODEJS_VERSION = "0162fdbe8ed986c9b5d5b79e53c98385ddaf6edd"
-
 http_archive(
     name = "build_bazel_rules_nodejs",
-    url = "https://github.com/bazelbuild/rules_nodejs/archive/%s.zip" % RULES_NODEJS_VERSION,
-    strip_prefix = "rules_nodejs-%s" % RULES_NODEJS_VERSION,
-    sha256 = "922327733a9ffe5961cd6edbce597d07845ea69cc753066d554137f663dedbe5",
+    url = "https://github.com/bazelbuild/rules_nodejs/archive/0.5.0.zip",
+    strip_prefix = "rules_nodejs-0.5.0",
+    sha256 = "06aabb253c3867d51724386ac5622a0a238bbd82e2c70ce1d09ee3ceac4c31d6",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories", "yarn_install")
@@ -40,14 +36,12 @@ node_repositories(package_json = ["//:package.json"])
 
 ####################################
 # Fetch and install the TypeScript rules
-# Using a pre-release snapshot to pick up the NodeJS options change for ng_module
-RULES_TS_VERSION = "fc6519088249ee0fca9e56a4a98ed10fb58cab63"
 
 http_archive(
     name = "build_bazel_rules_typescript",
-    url = "https://github.com/bazelbuild/rules_typescript/archive/%s.zip" % RULES_TS_VERSION,
-    strip_prefix = "rules_typescript-%s" % RULES_TS_VERSION,
-    sha256 = "cbaefbc9240cc033b910cde535fb44e05475f9b6d682deb25c298fbbb267b902",
+    url = "https://github.com/bazelbuild/rules_typescript/archive/0.11.1.zip",
+    strip_prefix = "rules_typescript-0.11.1",
+    sha256 = "7406bea7954e1c906f075115dfa176551a881119f6820b126ea1eacb09f34a1a",
 )
 
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_setup_workspace")
