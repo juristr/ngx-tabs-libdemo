@@ -21,7 +21,7 @@
     "rxjs": "^5.5.2"
   },
   "devDependencies": {
-    "@angular/bazel": "6.0.0-beta.7",
+    "@angular/bazel": "github:angular/bazel-builds#4c6cb21aa54d70431c3be5b2c19c7df39832ce23",
     "@angular/common": "6.0.0-beta.7",
     "@angular/compiler": "6.0.0-beta.7",
     "@angular/compiler-cli": "github:angular/compiler-cli-builds#a41c17d91cad12d8b8b3adee2c60edf37eadebbc",
