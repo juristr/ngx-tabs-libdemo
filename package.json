@@ -16,23 +16,23 @@
   "author": "Juri Strumpflohner",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": "6.0.0-beta.6",
-    "@angular/common": "6.0.0-beta.6",
+    "@angular/core": "6.0.0-beta.7",
+    "@angular/common": "6.0.0-beta.7",
     "rxjs": "^5.5.2"
   },
   "devDependencies": {
-    "@angular/bazel": "github:angular/bazel-builds#4f5564437085305367a75dfc65365811b346e903",
-    "@angular/common": "6.0.0-beta.6",
-    "@angular/compiler": "6.0.0-beta.6",
-    "@angular/compiler-cli": "6.0.0-beta.6",
-    "@angular/core": "6.0.0-beta.6",
+    "@angular/bazel": "6.0.0-beta.7",
+    "@angular/common": "6.0.0-beta.7",
+    "@angular/compiler": "6.0.0-beta.7",
+    "@angular/compiler-cli": "github:angular/compiler-cli-builds#a41c17d91cad12d8b8b3adee2c60edf37eadebbc",
+    "@angular/core": "6.0.0-beta.7",
     "@types/node": "9.4.6",
     "copyfiles": "1.2.0",
     "rollup": "0.51.8",
     "rxjs": "5.5.2",
     "semantic-release": "8.2.0",
     "tsickle": "0.27.2",
-    "typescript": "2.4.2",
+    "typescript": "2.6.2",
     "zone.js": "0.8.14"
   },
   "repository": {

@@ -37,11 +37,9 @@ node_repositories(package_json = ["//:package.json"])
 ####################################
 # Fetch and install the TypeScript rules
 
-http_archive(
+local_repository(
     name = "build_bazel_rules_typescript",
-    url = "https://github.com/bazelbuild/rules_typescript/archive/0.11.1.zip",
-    strip_prefix = "rules_typescript-0.11.1",
-    sha256 = "7406bea7954e1c906f075115dfa176551a881119f6820b126ea1eacb09f34a1a",
+    path = "node_modules/@bazel/typescript",
 )
 
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_setup_workspace")
