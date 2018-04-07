@@ -6,8 +6,7 @@
   "scripts": {
     "build": "ng-packagr -p package.json",
     "copyPackageJson": "copyfiles package.json dist",
-    "semantic-release":
-      "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post"
+    "semantic-release": "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post"
   },
   "author": "Juri Strumpflohner",
   "license": "MIT",
@@ -22,18 +21,17 @@
     "rxjs": "^5.5.2"
   },
   "devDependencies": {
-    "@angular/common": "^5.0.2",
-    "@angular/compiler": "^5.0.2",
-    "@angular/compiler-cli": "^5.0.2",
-    "@angular/core": "^5.0.2",
+    "@angular/common": "^5.2.9",
+    "@angular/compiler": "^5.2.9",
+    "@angular/compiler-cli": "^5.2.9",
+    "@angular/core": "^5.2.9",
     "copyfiles": "^1.2.0",
     "ng-packagr": "^2.0.0",
-    "rollup": "^0.51.8",
     "rxjs": "^5.5.2",
     "semantic-release": "^8.2.0",
     "tsickle": "^0.26.0",
     "typescript": "2.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.4"
   },
   "repository": {
     "type": "git",
