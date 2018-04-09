@@ -1,40 +1,55 @@
 {
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-tabs-libdemo",
-  "version": "0.0.0-development",
-  "description": "Demo library to showcase Angular packaging format",
-  "scripts": {
-    "build": "ng-packagr -p package.json",
-    "copyPackageJson": "copyfiles package.json dist",
-    "semantic-release": "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post"
-  },
+  "version": "0.0.0",
   "author": "Juri Strumpflohner",
   "license": "MIT",
-  "ngPackage": {
-    "lib": {
-      "entryFile": "public_api.ts"
-    }
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "peerDependencies": {
-    "@angular/core": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "rxjs": "^5.5.2"
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^6.0.0-rc.1",
+    "@angular/core": "^6.0.0-rc.1",
+    "@angular/compiler": "^6.0.0-rc.1",
+    "@angular/animations": "^6.0.0-rc.1",
+    "@angular/forms": "^6.0.0-rc.1",
+    "@angular/http": "^6.0.0-rc.1",
+    "@angular/platform-browser": "^6.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "^6.0.0-rc.1",
+    "@angular/router": "^6.0.0-rc.1",
+    "core-js": "^2.5.4",
+    "rxjs": "^6.0.0-rc.0",
+    "zone.js": "^0.8.24"
   },
   "devDependencies": {
-    "@angular/common": "^5.2.9",
-    "@angular/compiler": "^5.2.9",
-    "@angular/compiler-cli": "^5.2.9",
-    "@angular/core": "^5.2.9",
-    "copyfiles": "^1.2.0",
-    "ng-packagr": "^2.0.0",
-    "rxjs": "^5.5.2",
-    "semantic-release": "^8.2.0",
-    "tsickle": "^0.26.0",
-    "typescript": "2.4.2",
-    "zone.js": "^0.8.4"
+    "@angular/compiler-cli": "^6.0.0-rc.1",
+    "@angular-devkit/build-ng-packagr": "~0.5.0",
+    "@angular-devkit/build-angular": "~0.5.0",
+    "ng-packagr": "^2.4.1",
+    "tsickle": ">=0.25.5",
+    "tslib": "^1.7.1",
+    "typescript": "~2.7.2",
+    "@angular/cli": "~6.0.0-rc.2",
+    "@angular/language-service": "^6.0.0-rc.1",
+    "@types/jasmine": "~2.8.6",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~4.2.1",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~1.7.1",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~1.4.2",
+    "karma-jasmine": "~1.1.1",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.3.0",
+    "ts-node": "~5.0.1",
+    "tslint": "~5.9.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/juristr/ngx-tabs-libdemo.git"
-  }
+  "engines": { "node": ">=9" }
 }

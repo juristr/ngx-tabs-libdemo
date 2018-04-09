@@ -1,14 +1,18 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
-    "rootDir": "./src",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2015", "dom"],
-    "skipLibCheck": true
-  },
-  "files": ["./public_api.ts"]
+    "lib": ["es2017", "dom"],
+    "paths": {
+      "@juristr/ngx-tabs-lib": ["dist/ngx-tabs-lib"]
+    }
+  }
 }
