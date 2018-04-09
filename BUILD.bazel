@@ -29,13 +29,14 @@ load("@angular//:index.bzl", "ng_module", "ng_package")
 ng_module(
     name = "root_module",
     srcs = glob(["*.ts"]),
+    module_name = "ngx-tabs-libdemo",
     deps = ["//src"],
 )
 
 ng_package(
-    # Note: currently this is also the name of the resulting bundles
-    name = "ngx-tabs-libdemo",
+    name = "npm_package",
     srcs = [":package.json"],
     entry_point = "index.js",
+    entry_point_name = "ngx-labs-libdemo",
     deps = [":root_module"],
 )

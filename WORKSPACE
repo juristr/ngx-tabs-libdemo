@@ -12,26 +12,25 @@ workspace(name = "ngx_tabs_libdemo")
 # Fetch and install the NodeJS rules
 http_archive(
   name = "build_bazel_rules_nodejs",
-  url = "https://github.com/bazelbuild/rules_nodejs/archive/0.6.0.zip",
-  strip_prefix = "rules_nodejs-0.6.0",
-  sha256 = "e8a2bb5ca51fbafb244bc507bcebcae33a63d969f47413b319a8dcce032845bf",
+  url = "https://github.com/bazelbuild/rules_nodejs/archive/0.7.0.zip",
+  strip_prefix = "rules_nodejs-0.7.0",
+  sha256 = "d0cecf6b149d431ee8349f683d1db6a2a881ee81d8066a66c1b112a4b02748de",
 )
+
+load("@build_bazel_rules_nodejs//:defs.bzl", "check_bazel_version", "node_repositories")
+check_bazel_version("0.9.0")
 
 # NOTE: this rule installs nodejs, npm, and yarn, but does NOT install
 # your npm dependencies. You must still run the package manager.
-load("@build_bazel_rules_nodejs//:defs.bzl", "check_bazel_version", "node_repositories")
-#load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories", "yarn_install")
-
-check_bazel_version("0.9.0")
 node_repositories(package_json = ["//:package.json"])
 
 ####################################
 # Fetch and install the TypeScript rules
 http_archive(
   name = "build_bazel_rules_typescript",
-  url = "https://github.com/bazelbuild/rules_typescript/archive/df4a1a561d88e187438ac7791a5ac33995f2d317.zip",
-  strip_prefix = "rules_typescript-df4a1a561d88e187438ac7791a5ac33995f2d317",
-  sha256 = "51a84f156eeddf126e9370b5c193b4709eeb330448e2de5afcda40232e0b56bc",
+  url = "https://github.com/bazelbuild/rules_typescript/archive/0.12.0.zip",
+  strip_prefix = "rules_typescript-0.12.0",
+  sha256 = "60c17e558fdcb66783f39418c8dfd4858c8fd748089e42ddf91e75a853471244",
 )
 
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_setup_workspace")
