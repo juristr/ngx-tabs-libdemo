@@ -5,6 +5,7 @@
   "scripts": {
     "build": "bazel build //...",
     "build:lib": "bazel build :npm_package",
+    "build:lib:dist": "bazel build :npm_package --symlink_prefix=./dist/",
     "copyPackageJson": "copyfiles package.json dist",
     "semantic-release":
       "semantic-release pre && npm run copyPackageJson && npm publish dist && semantic-release post",

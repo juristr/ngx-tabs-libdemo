@@ -5,7 +5,7 @@
 /dist
 /tmp
 /out-tsc
-bazelbuild/
+bazel-out
 
 # dependencies
 /node_modules
