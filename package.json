@@ -2,6 +2,8 @@
   "name": "nxlibworkflow",
   "version": "0.0.0",
   "license": "MIT",
+  "description": "Demo library to showcase Angular packaging format",
+  "author": "Juri Strumpflohner",
   "packageScope": "@juristr",
   "packages": ["libs/ngx-tabs-core", "libs/ngx-tabs-lib"],
   "scripts": {
@@ -14,10 +16,11 @@
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
-    "build:lib": "npm run build:core && npm run build:tabs",
+    "build:lib-patch": "npm run build:core && npm run build:tabs",
     "build:core": "ng-packagr -p libs/ngx-tabs-core/package.json",
     "build:tabs": "ng-packagr -p libs/ngx-tabs-lib/package.json",
-    "build:lib-node": "ts-node tools/build/package",
+    "build:lib": "npm run build:lib-packages && ts-node tools/build/set-metadata",
+    "build:lib-packages": "ts-node tools/build/package",
     "affected:apps": "./node_modules/.bin/nx affected:apps",
     "affected:build": "./node_modules/.bin/nx affected:build",
     "affected:e2e": "./node_modules/.bin/nx affected:e2e",
@@ -76,5 +79,9 @@
     "ts-node": "^6.0.0",
     "tslint": "~5.9.1",
     "typescript": "2.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juristr/ngx-tabs-libdemo.git"
   }
 }
