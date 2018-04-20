@@ -98,6 +98,13 @@
       "tags": []
     },
     {
+      "name": "ngx-tabs-core",
+      "root": "libs/ngx-tabs-core/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
       "name": "ngx-tabs-lib",
       "root": "libs/ngx-tabs-lib/src",
       "test": "../../../test.js",

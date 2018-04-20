@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessagesService } from '@juristr/ngx-tabs-core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor(private messageService: MessagesService) {}
 
   ngOnInit() {}
+
+  onSetPrefix(value: string) {
+    this.messageService.setTitlePrefix(value);
+  }
 }

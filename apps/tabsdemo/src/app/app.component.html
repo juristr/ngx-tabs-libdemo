@@ -1,5 +1,8 @@
 <h1>Hi ngVikings</h1>
 
+<input type="text" #titlePrefix>
+<button (click)="onSetPrefix(titlePrefix.value)">Set title prefix</button>
+
 <ngx-tabs>
   <ngx-tab tabTitle="Hi">
     <p>Hi there</p>

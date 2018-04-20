@@ -1,13 +1,22 @@
-import { Component, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, ContentChildren, QueryList, AfterContentInit, OnInit } from '@angular/core';
 import { TabComponent } from './tab.component';
+import { Observable } from 'rxjs/Observable';
+import { MessagesService } from '@juristr/ngx-tabs-core';
 
 @Component({
   selector: 'ngx-tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.css']
 })
-export class TabsComponent implements AfterContentInit {
+export class TabsComponent implements OnInit, AfterContentInit {
+  titlePrefix$: Observable<string>;
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
+
+  constructor(private messageService: MessagesService) {}
+
+  ngOnInit() {
+    this.titlePrefix$ = this.messageService.titlePrefix$;
+  }
 
   // contentChildren are set
   ngAfterContentInit() {
