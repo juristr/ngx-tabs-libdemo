@@ -3,6 +3,7 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TabsComponent } from './tabs.component';
 import { TabComponent } from './tab.component';
+import { NgxTabsCoreModule } from '@juristr/ngx-tabs-core';
 
 describe('TabsComponent', () => {
   let fixture: ComponentFixture<TestCmp>;
@@ -11,7 +12,8 @@ describe('TabsComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [TestCmp, TabsComponent, TabComponent]
+        declarations: [TestCmp, TabsComponent, TabComponent],
+        imports: [NgxTabsCoreModule.forRoot()]
       }).compileComponents();
     })
   );
@@ -40,9 +42,7 @@ describe('TabsComponent', () => {
   });
 
   it('should activate the tab when clicking on it', () => {
-    const secondTabHeader = fixture.debugElement.queryAll(
-      By.css('ul>li:nth-child(2)')
-    )[0];
+    const secondTabHeader = fixture.debugElement.queryAll(By.css('ul>li:nth-child(2)'))[0];
     expect(secondTabHeader).toBeDefined();
 
     secondTabHeader.triggerEventHandler('click', {});
