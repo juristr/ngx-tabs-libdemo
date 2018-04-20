@@ -3,7 +3,7 @@
   "project": {
     "name": "nxlibworkflow",
     "npmScope": "juristr",
-    "latestMigration": "20180130-angular-devkit-schematics"
+    "latestMigration": "20180412-nx-update-scripts"
   },
   "e2e": {
     "protractor": {
@@ -33,7 +33,10 @@
     "schematics": {
       "collection": "@nrwl/schematics",
       "postGenerate": "npm run format",
-      "newProject": ["app", "lib"]
+      "newProject": [
+        "app",
+        "lib"
+      ]
     },
     "styleExt": "css",
     "component": {}
@@ -46,7 +49,10 @@
       "name": "tabsdemo",
       "root": "apps/tabsdemo/src",
       "outDir": "dist/apps/tabsdemo",
-      "assets": ["assets", "favicon.ico"],
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -54,19 +60,25 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "../../../tsconfig.spec.json",
       "prefix": "app",
-      "styles": ["styles.css"],
+      "styles": [
+        "styles.css"
+      ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "tags": []
     },
     {
       "name": "tabsdemo-packaged",
       "root": "apps/tabsdemo/src",
       "outDir": "dist/apps/tabsdemo-packaged",
-      "assets": ["assets", "favicon.ico"],
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -74,19 +86,23 @@
       "tsconfig": "tsconfig.app.packaged.json",
       "testTsconfig": "../../../tsconfig.spec.json",
       "prefix": "app",
-      "styles": ["styles.css"],
+      "styles": [
+        "styles.css"
+      ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "tags": []
     },
     {
       "name": "ngx-tabs-lib",
       "root": "libs/ngx-tabs-lib/src",
       "test": "../../../test.js",
-      "appRoot": ""
+      "appRoot": "",
+      "tags": []
     }
   ]
 }
